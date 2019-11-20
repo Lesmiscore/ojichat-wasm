@@ -1,6 +1,7 @@
 package main
 
 import(
+    "fmt"
     "github.com/greymd/ojichat/generator"
     "syscall/js"
 )
@@ -36,7 +37,10 @@ func registerCallbacks() {
 }
 
 func main(){
-    c := make(chan struct{}, 0)
     registerCallbacks()
-    <-c
+    fmt.Println("loaded")
+    /*
+    r, _ := generator.Start(generator.Config{})
+    fmt.Printf("%s\n", r)
+    */
 }
