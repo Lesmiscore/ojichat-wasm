@@ -20,6 +20,7 @@ jobs:
         node-version: '12.6.0'
     - name: Build website
       run: |
+        go get github.com/greymd/ojichat/generator
         npm i
         npm run build
     - name: Upload to gh-pages
