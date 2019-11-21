@@ -27,7 +27,7 @@ jobs:
       run: |
         git config --global user.name nao20010128nao
         git config --global user.email nao20010128@gmail.com
-        git clone https://nao20010128nao:${{ secrets.GITHUB_PAT }}@github.com/nao20010128nao/ojichat-wasm.git -b gh-pages gh-pages
+        git clone -b gh-pages https://nao20010128nao:${{ secrets.GITHUB_PAT }}@github.com/nao20010128nao/ojichat-wasm.git gh-pages
         cd gh-pages
         cp ../public/* .
         git add .
