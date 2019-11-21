@@ -37,10 +37,12 @@ func registerCallbacks() {
 }
 
 func main(){
+    c := make(chan struct{}, 0)
     registerCallbacks()
     fmt.Println("loaded")
     /*
     r, _ := generator.Start(generator.Config{})
     fmt.Printf("%s\n", r)
     */
+    <-c
 }
