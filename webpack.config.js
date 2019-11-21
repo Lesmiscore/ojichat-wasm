@@ -18,7 +18,7 @@ module.exports = {
         use: {
           loader: "babel-loader",
           options: {
-            plugins: ["transform-react-jsx", "@babel/syntax-dynamic-import"]
+            plugins: ["transform-react-jsx"]
           }
         }
       },
