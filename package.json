@@ -4,7 +4,10 @@
   "description": "ojichat in WASM",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pret": "prettier --print-width 100 --write src/*.js*",
+    "gobuild": "cd golang/ ; ./build.sh",
+    "build": "npm run gobuild ; webpack ; cp src/index.html public/index.html"
   },
   "repository": {
     "type": "git",
@@ -18,6 +21,7 @@
   "homepage": "https://github.com/nao20010128nao/ojichat-wasm#readme",
   "devDependencies": {
     "@babel/core": "^7.7.2",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
     "babel-plugin-transform-react-jsx": "^6.24.1",
@@ -25,10 +29,29 @@
     "file-loader": "^4.2.0",
     "husky": "^3.1.0",
     "lint-staged": "^9.4.3",
+    "prettier": "^1.19.1",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10"
   },
   "dependencies": {
-    "react": "^16.12.0"
+    "bootstrap": "^4.3.1",
+    "react": "^16.12.0",
+    "react-bootstrap": "^1.0.0-beta.16",
+    "react-dom": "^16.12.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{json,css}": [
+      "prettier --print-width 100 --write",
+      "git add"
+    ],
+    "*.{js,jsx}": [
+      "prettier --print-width 100 --write",
+      "git add"
+    ]
   }
 }

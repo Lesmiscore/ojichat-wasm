@@ -1,11 +1,14 @@
 const path = require("path");
 
 module.exports = {
-  entry: "./src/init.js",
+  entry: "./src/init.jsx",
   mode: "production",
   output: {
     path: path.resolve(__dirname, "public"),
     filename: "main.js"
+  },
+  resolve: {
+    extensions: [".js", ".jsx"]
   },
   module: {
     rules: [
@@ -15,13 +18,18 @@ module.exports = {
         use: {
           loader: "babel-loader",
           options: {
-            plugins: ["transform-react-jsx"]
+            plugins: ["transform-react-jsx", "@babel/syntax-dynamic-import"]
           }
         }
       },
       { test: /\.css$/, loaders: ["style-loader", "css-loader"], exclude: /node_modules/ },
       {
-        test: /\.(jpg|png|gif|wasm|svg)$/,
+        test: /\.(jpg|png|gif|svg)$/,
+        loaders: ["file-loader"]
+      },
+      {
+        test: /\.wasm$/,
+        type: "javascript/auto",
         loaders: ["file-loader"]
       }
     ]

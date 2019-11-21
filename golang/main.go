@@ -13,7 +13,7 @@ func ojichat(this js.Value, i []js.Value) (interface {}){
         targetName := jsCfg.Get("targetName")
         emojiNum := jsCfg.Get("emojiNum")
         punctuationLevel := jsCfg.Get("punctuationLevel")
-        if targetName.Type() == js.TypeString {
+        if targetName.Type() == js.TypeString && targetName.Truthy() {
             config.TargetName = targetName.String()
         }
         if emojiNum.Type() == js.TypeNumber {
