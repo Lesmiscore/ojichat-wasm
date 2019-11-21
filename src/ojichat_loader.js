@@ -18,7 +18,7 @@ export async function loadOjichat(progressCallback) {
     }
     chunks.push(value);
     receivedLength += value.length;
-    progressCallback(contentLength, receivedLength, 0);
+    progressCallback(Math.max(receivedLength, contentLength), receivedLength, 0);
   }
 
   const full = Buffer.alloc(receivedLength);
