@@ -64,7 +64,8 @@ export default class Main extends React.Component {
         />
         <FieldGroup type="button" value="実行" onClick={this.handleRun.bind(this)} />
         <FieldGroup
-          type="textarea"
+          as="textarea"
+          rows="3"
           value={this.state.result}
           label="出力"
           placeholder="結果が表示されます"
