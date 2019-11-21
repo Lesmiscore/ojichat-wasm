@@ -11,10 +11,13 @@ export default class App extends React.Component {
     super();
     this.state = {
       loading: true,
-      error: false
+      error: false,
+      loadingTotal: 0,
+      loadingProgress: 0,
+      loadingStage: 0
     };
     setTimeout(() => {
-      loadOjichat()
+      loadOjichat(this.loadProgress.bind(this))
         .then(() => {
           this.setState({
             loading: false
@@ -28,9 +31,18 @@ export default class App extends React.Component {
         });
     }, 0);
   }
+  loadProgress(loadingTotal, loadingProgress, loadingStage) {
+    this.setState({ loadingTotal, loadingProgress, loadingStage });
+  }
   render() {
     if (this.state.loading) {
-      return <Loading />;
+      return (
+        <Loading
+          loadingTotal={this.state.loadingTotal}
+          loadingProgress={this.state.loadingProgress}
+          loadingStage={this.state.loadingStage}
+        />
+      );
     } else if (this.state.error) {
       return <ErrorScreen message={this.state.error} />;
     } else {
