@@ -1,0 +1,34 @@
+{
+  "name": "ojichat-wasm",
+  "version": "1.0.0",
+  "description": "ojichat in WASM",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nao20010128nao/ojichat-wasm.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nao20010128nao/ojichat-wasm/issues"
+  },
+  "homepage": "https://github.com/nao20010128nao/ojichat-wasm#readme",
+  "devDependencies": {
+    "@babel/core": "^7.7.2",
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "eslint": "^6.6.0",
+    "file-loader": "^4.2.0",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.4.3",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  },
+  "dependencies": {
+    "react": "^16.12.0"
+  }
+}
