@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "pret": "prettier --print-width 100 --write src/*.js*",
     "gobuild": "cd golang/ ; ./build.sh",
-    "build": "npm run gobuild ; webpack ; cp src/index.html public/index.html"
+    "webbuild": "webpack ; cp src/index.html public/index.html",
+    "build": "npm run gobuild ; npm run webbuild"
   },
   "repository": {
     "type": "git",

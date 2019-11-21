@@ -1,0 +1,35 @@
+name: ojichat in WASM
+
+on: 
+ push:
+   branches:
+     - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up Golang
+      uses: actions/setup-go@v1
+      with:
+        go-version: '1.13.4'
+    - name: Set up Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: '12.6.0'
+    - name: Build website
+      run: |
+        npm i
+        npm run build
+    - name: Upload to gh-pages
+      run: |
+        git config --global user.name nao20010128nao
+        git config --global user.email nao20010128@gmail.com
+        git clone https://nao20010128nao:${{ secrets.GITHUB_PAT }}@github.com/nao20010128nao/ojichat-wasm.git -b gh-pages gh-pages
+        cd gh-pages
+        cp ../public/* .
+        git add .
+        git commit -m "$(date)"
+        git push
+
