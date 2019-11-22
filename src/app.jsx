@@ -35,8 +35,9 @@ export default class App extends React.Component {
     this.setState({ loadingTotal, loadingProgress, loadingStage });
   }
   render() {
+    let inner;
     if (this.state.loading) {
-      return (
+      inner = (
         <Loading
           loadingTotal={this.state.loadingTotal}
           loadingProgress={this.state.loadingProgress}
@@ -44,9 +45,20 @@ export default class App extends React.Component {
         />
       );
     } else if (this.state.error) {
-      return <ErrorScreen message={this.state.error} />;
+      inner = <ErrorScreen message={this.state.error} />;
     } else {
-      return <Main />;
+      inner = <Main />;
     }
+    return (
+      <div>
+        <h1 class="center_text">ojichat in WASM</h1>
+        {inner}
+        <p class="center_text">
+          <a href="https://github.com/nao20010128nao/ojichat-wasm">GitHub</a>
+          {" | "}
+          <a href="https://github.com/greymd/ojichat">偉大なる元ネタ</a>
+        </p>
+      </div>
+    );
   }
 }

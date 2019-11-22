@@ -4,6 +4,9 @@ require("./wasm_exec_correction");
 const Buffer = require("safe-buffer").Buffer;
 
 export async function loadOjichat(progressCallback) {
+  if (global.ojichat) {
+    return global.ojichat;
+  }
   const go = new Go();
   const response = await fetch(require("../golang/main.wasm"));
   const contentLength = response.headers.get("Content-Length");

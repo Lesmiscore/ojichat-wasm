@@ -28,8 +28,8 @@ export default class Loading extends React.Component {
           }}
           class="rotating"
         ></img>
-        {this.state.message ? <p class="initial_message">{this.state.message}</p> : null}
-        <p class="initial_message">
+        {this.state.message ? <p class="center_text">{this.state.message}</p> : null}
+        <p class="center_text">
           読み込み中
           {this.state.loadingTotal !== 0
             ? [

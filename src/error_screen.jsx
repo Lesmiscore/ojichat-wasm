@@ -19,8 +19,8 @@ export default class ErrorScreen extends React.Component {
             "align-self": "center"
           }}
         ></img>
-        <p class="initial_message">{this.state.message}</p>
-        <p class="initial_message">ページを更新してやり直してください</p>
+        <p class="center_text">{this.state.message}</p>
+        <p class="center_text">ページを更新してやり直してください</p>
       </div>
     );
   }
