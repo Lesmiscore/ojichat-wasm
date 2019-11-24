@@ -8,7 +8,8 @@
     "pret": "prettier --print-width 100 --write src/*.js*",
     "gobuild": "cd golang/ ; ./build.sh",
     "webbuild": "webpack ; cp src/index.html public/index.html",
-    "build": "npm run gobuild ; npm run webbuild"
+    "build": "npm run gobuild ; npm run webbuild",
+    "serve": "cd public ; goexec 'http.ListenAndServe(\":9080\", http.FileServer(http.Dir(\".\")))'"
   },
   "repository": {
     "type": "git",
