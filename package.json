@@ -33,7 +33,7 @@
     "lint-staged": "10.3.0",
     "prettier": "1.19.1",
     "webpack": "4.41.2",
-    "webpack-cli": "3.3.10"
+    "webpack-cli": "3.3.12"
   },
   "dependencies": {
     "react": "^16.12.0",
