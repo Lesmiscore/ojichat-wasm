@@ -1,9 +1,12 @@
+// +build js,wasm
+
 package main
 
-import(
-    "fmt"
-    "github.com/greymd/ojichat/generator"
-    "syscall/js"
+import (
+	"fmt"
+	"syscall/js"
+
+	"github.com/greymd/ojichat/generator"
 )
 
 func ojichat(this js.Value, i []js.Value) (interface {}){
@@ -20,7 +23,7 @@ func ojichat(this js.Value, i []js.Value) (interface {}){
             config.EmojiNum = emojiNum.Int()
         }
         if punctuationLevel.Type() == js.TypeNumber {
-            config.PunctiuationLevel = punctuationLevel.Int()
+            config.PunctuationLevel = punctuationLevel.Int()
         }
     }
     result, err := generator.Start(config)
