@@ -1,4 +1,5 @@
 import React from "react";
+import thinkingFace from "./assets/thinking_face.svg";
 
 export default class Loading extends React.Component {
   constructor(opts) {
@@ -18,7 +19,7 @@ export default class Loading extends React.Component {
     return (
       <div>
         <img
-          src={require("./assets/thinking_face.svg")}
+          src={thinkingFace}
           style={{
             width: "200px",
             height: "200px",

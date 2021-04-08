@@ -25,7 +25,12 @@ module.exports = {
       { test: /\.css$/, loaders: ["style-loader", "css-loader"], exclude: /node_modules/ },
       {
         test: /\.(jpg|png|gif|svg)$/,
-        loaders: ["file-loader"]
+        use: {
+          loader: "file-loader",
+          options: {
+            esModule: false,
+          },
+        }
       },
       {
         test: /\.wasm$/,

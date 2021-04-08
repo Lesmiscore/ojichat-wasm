@@ -1,16 +1,18 @@
 import React from "react";
+import errorImage from "./assets/error.svg";
 
 export default class ErrorScreen extends React.Component {
   constructor(opts) {
     super();
     this.state = { message: opts.message };
+    console.log(errorImage);
   }
 
   render() {
     return (
       <div>
         <img
-          src={require("./assets/error.svg")}
+          src={errorImage}
           style={{
             width: "200px",
             height: "200px",

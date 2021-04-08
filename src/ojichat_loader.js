@@ -8,7 +8,7 @@ export async function loadOjichat(progressCallback) {
     return global.ojichat;
   }
   const go = new Go();
-  const response = await fetch(require("../golang/main.wasm"));
+  const response = await fetch(require("../golang/main.wasm").default);
   const contentLength = response.headers.get("Content-Length");
   const reader = response.body.getReader();
   let receivedLength = 0;
