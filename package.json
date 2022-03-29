@@ -37,9 +37,9 @@
     "webpack-dev-server": "4.7.4"
   },
   "dependencies": {
-    "react": "^17.0.0",
+    "react": "^18.0.0",
     "react-bootstrap": "^2.0.0",
-    "react-dom": "^17.0.0",
+    "react-dom": "^18.0.0",
     "safe-buffer": "^5.2.0"
   },
   "husky": {
